@@ -82,10 +82,3 @@ Para rodar os testes unitários do projeto:
 # Running unit tests.
 $ npm run test
 ```
-
-Para criar o coverage dos testes unitários:
-
-```bash
-# Create code coverage for unit tests.
-$ npm run test:cov
-```

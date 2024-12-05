@@ -3,8 +3,9 @@ import { ConfigModule } from '@nestjs/config';
 import apiConfig from '@src/config/api.config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { HealthCheckModule } from '@src/health-check/health-check.module';
+import { ProductsModule } from './products/products.module';
 
-const importedModules = [HealthCheckModule];
+const importedModules = [HealthCheckModule, ProductsModule];
 @Module({
   imports: [
     ConfigModule.forRoot({

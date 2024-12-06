@@ -8,6 +8,7 @@ REST API usando NestJS e MongoDB.
     - [Stack](#stack)
     - [Installation](#installation)
     - [Running](#running)
+    - [Endpoints](#endpoints)
     - [Tests](#tests)
 
 <!-- /TOC -->
@@ -74,6 +75,61 @@ Se tudo estiver OK:
 {"healthy":true,"name":"API","version":"0.0.1"}
 ```
 
+## Endpoints <a name="endpoints"></a>
+
+```bash
+# Listar todos os produtos.
+GET: http://localhost:3000/products/
+```
+
+```bash
+# Busca por string na listagem de produtos.
+GET: http://localhost:3000/products/?keyword=test
+```
+
+```bash
+# Paginacao na listagem de produtos.
+GET: http://localhost:3000/products/?limit=10&page=1
+```
+
+```bash
+# Criar novo produto.
+POST: http://localhost:3000/products/
+
+# Payload novo produto.
+{
+	"*title": (string),
+	"*description" : (string),
+	"*price": (number)
+	"*photo": (string)
+}
+
+* campos obrigatórios
+```
+
+```bash
+# Exibir um produto.
+GET: http://localhost:3000/products/{produtctId}
+```
+
+```bash
+# Atualizar um produto.
+PATCH: http://localhost:3000/products/{produtctId}
+
+# Payload update produto
+{
+	"title": (string),
+	"description" : (string),
+	"price": (number)
+	"photo": (string)
+}
+```
+
+```bash
+# Deletar um produto.
+DELETE: http://localhost:3000/products/{produtctId}
+```
+
 ## Test <a name="tests"></a>
 
 Para rodar os testes unitários do projeto:
@@ -81,4 +137,12 @@ Para rodar os testes unitários do projeto:
 ```bash
 # Running unit tests.
 $ npm run test
+```
+
+
+Para gerar o coverage dos testes unitários:
+
+```bash
+# Running unit tests.
+$ npm run test:cov
 ```
